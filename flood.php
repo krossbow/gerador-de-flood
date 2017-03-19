@@ -28,20 +28,14 @@
 </form><br /><br />
 
 <?php
-if ($_POST["palavra"] != "" && $_POST["separador"] == "espaco" && $_POST["numero"] != "") {
-$f = 0;
-while ($f < $_POST["numero"]) {
-echo $_POST["palavra"] . " ";
-$f++;
-}
-}
-elseif ($_POST["palavra"] != "" && $_POST["separador"] == "enter" && $_POST["numero"] != "") {
-$f = 0;
-while ($f < $_POST["numero"]) {
-echo $_POST["palavra"] . "<br />";
-$f++;
-}
-}
+	$separadores = array("espaco" => " ", "enter" => "\n");
+
+	if ($_POST["palavra"] && $_POST["numero"] != "") {
+		while ($_POST["numero"]) {
+			echo $_POST["palavra"] . $separadores[$_POST["separador"]];
+			$_POST["numero"]--;
+		}
+	}
 ?>
 
 </center></body>
