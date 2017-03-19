@@ -30,7 +30,7 @@
 <?php
 	$separadores = array("espaco" => " ", "enter" => "\n");
 
-	if ($_POST["palavra"] && $_POST["numero"] != "") {
+	if ($_POST["palavra"] && $_POST["numero"]) {
 		while ($_POST["numero"]) {
 			echo $_POST["palavra"] . $separadores[$_POST["separador"]];
 			$_POST["numero"]--;
